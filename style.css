@@ -9,7 +9,7 @@ body{
     background-color: white;
 }
 
-
+/* FOOTER */
 .pieDePagina .seccion2{
 background-color: #BFBDBC;
 padding: 15px 10px;
@@ -58,3 +58,50 @@ color: white;
  font-family: Century Gothic; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
 }
 
+/* PRODUCTOS */
+.main{
+    padding: 20px;
+}
+.container_products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:10px;
+}
+.product{
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.product_new{
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+.product_new:before{
+    content: "NEW";
+    background: red;
+    padding: 10px;
+    width: 60px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    transform: rotate(-90deg);
+    color: white;
+}
+.title_product{
+    text-align: center;
+}
+.price_product{
+    color: #25316D;
+    font-weight: bold;
+}
+.product_icon{
+    display: block;
+    margin: 10px;
+}
+.product_icon:hover{
+    color: #25316D;
+}
