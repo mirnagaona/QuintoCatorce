@@ -1,99 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/e2087baa75.js" crossorigin="anonymous"></script>
-    <title>Quinto Catorce</title>
-    <link rel="icon" type="image/png" href="/Imagenes/sticker caja.png">
+    <title>Contacto QC</title>    
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
+   <section class="form-contact">
     <header>
-        <p class="envio">Envio a todo el país</p> <br>
-        <h1 class="qc">Quinto Catorce</h1> <br>
-        <nav>
-            <a href="index.html"> Inicio</a>
-            <a href="carteras.html"> Carteras</a>
-            <a href="cinturones.html"> Cinturones</a> 
-            <a href="contactos.html"> Contactos</a>
-        </nav>
-    
-    </header> 
-    <main>
-   <h1> Crea nueva cuenta</h1>
-   <h2>Informacion personal</h2> <br>
-   <form>
-    <label for="First Name"> Nombre: </label> <br> 
-    <input type="text" name = "First name" placeholder=" Ingrese su nombre aquí"></input> <br> <br>
-
-    <label for="Last Name ">Apellido:</label> <br> 
-    <input type="text" name=" Last Name " placeholder="Ingrese su apellido aquí"></input> <br> <br>
-   
-
-    <input type ="checkbox">  Suscribirse al Newsletter</input> <br> <br>
-
-    <h2>Informacion de ingreso</h2>
-
-    <label for="email"> Correo electrónico </label> <br> 
-    <input type="email" name = "Email" placeholder=" Ingrese su correo "></input> <br> <br>
-
-    <label for="Password ">Constraseña </label>  <br> 
-    <input type="password" name=" Password " placeholder= "Ingrese su constraseña" maxlength="8"></input> <br> <br>
-    <input type="submit" value="Crear cuenta"></input>
+        <span>
+         <i class="fa fa-paper-plane-o"></i>
+        </span>
+    </header>
 
 
-   
-</form>
+    <form action="https://formspree.io/f/xvoywdyk"method="POST" 
+        class="contact" onsubmit="return validation()" action="">
 
-    </main>
-    <footer class="pieDePagina">
-        <div class="seccion1">
-            <div class="box1">
-              
-                <div class="logo">
-                    <img src="/Imagenes/Copia de qc logofondo.jpg" alt="80px" width="80px">
-                </div>
-            </div>
-            <div class="box2">
-                <h4>Ayuda</h4>
-                <!--links a otras paginas-->
-                <ul>
-                    <li>
-                        <a href="http://">Contacto</a>
-                    </li>
-                    <li>
-                        <a href="http://">Local</a>
-                    </li>
-                    <li>
-                        <a href="http://">Terminos y condiciones</a>
-                    </li>
-                    <li>
-                        <a href="http://">Medios de envio</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="box3">
-                <h4>Seguinos</h4>
-                <!--iconos de redes sociales-->
-                <div class="redes">
-                    <a href="https://instagram.com/quintocatorce?igshid=YmMyMTA2M2Y=">
-                        <i class="fa-brands fa-instagram" style="font-size: 36px; color: black;"></i>
-                        </a>
-                        
-                        <a href="https://wa.me/c/5491123894631">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 36px; color: black;"></i>
-                        </a>
-                        <a href="mailto:quintocatorce.contacto@gmail.com">  
-                            <i class="fa-solid fa-envelope" style="font-size: 36px; color: black;"></i></a>
-                            
-                </div>
-            </div>
-        </div>
-        <div class="seccion2">
-            <small>© 2022 QuintoCatorce |Todos los derechos reservados </small>
-        </div>
-    </footer></body>
+        <label for="name">Nombre y Apellido</label>
+        <input type="text" name="nombre" id="name"> <label id="msn"></label>
         
-    
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email"> <label id="msnm"></label>
+
+        <label for="phone">Celular</label>
+        <input type="tel" name="phone" id="phone"> <label id="msnp"></label>
+
+        <label for="mensaje">Dejanos tus comentarios</label>
+        <textarea name="mensaje" id="mensaje"></textarea>
+
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">Suscribite al Newsletter</label>
+
+        <input type="submit" value="Enviar" />
+
+    </form>
+   </section>
+
+ <script>
+
+    function validation()
+
+    {
+        valorsalida=true;
+
+
+        valor=document.getElementById("name").value;
+
+        if (valor == null || valor.length == 0)
+        {
+            document.getElementById ('msn').innerHTML= "Falta nombre";
+            elemento= document.getElementById ('name');
+            elemento.focus();
+            valorsalida=false;
+        }
+        
+        valor=document.getElementById("email").value;
+         
+        if (!(/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/) || valor == null || valor.length == 0 )
+        {
+            document.getElementById ('msnm').innerHTML= "Falta email";
+            elemento= document.getElementById ('email');
+            elemento.focus();
+            valorsalida=false;
+        } 
+
+        valor=document.getElementById("phone").value;
+
+        if (isNaN(valor) || valor == null || valor.length == 0 )
+        {
+            document.getElementById ('msnp').innerHTML= "Falta numero";
+            elemento= document.getElementById ('phone');
+            elemento.focus();
+            valorsalida=false;
+            
+        }
+        
+        return valorsalida;
+    }
+
+
+ </script>
+
+</body>
+</html>
